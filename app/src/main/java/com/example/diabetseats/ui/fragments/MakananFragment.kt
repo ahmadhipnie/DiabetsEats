@@ -47,9 +47,6 @@ class MakananFragment : Fragment() {
             makananAdapter.setData(makananList)
         }
 
-        // Atur RecyclerView dan adapter
-        binding.rvMakanan.layoutManager = LinearLayoutManager(requireContext())
-        binding.rvMakanan.adapter = makananAdapter
 
         // Menerapkan aksi pada tombol cari
         with(binding) {
@@ -63,6 +60,9 @@ class MakananFragment : Fragment() {
             }
         }
 
+        // Atur RecyclerView dan adapter
+        binding.rvMakanan.layoutManager = LinearLayoutManager(requireContext())
+        binding.rvMakanan.adapter = makananAdapter
 
 
 
