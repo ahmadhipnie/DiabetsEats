@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.RegisterActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="30dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="center"
+                    android:text="hallo,"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:layout_gravity="bottom"
+                    android:textSize="18sp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Selamat Datang!"
+                    android:textSize="28sp"
+                    android:fontFamily="@font/poppins_bold"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nama"
+                android:textSize="18sp"
+                android:fontFamily="@font/poppins_bold"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+                android:id="@+id/et_nama_register"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:inputType="text"
+                android:hint="masukkan nama"
+                android:elevation="12dp"
+                android:background="@drawable/rounded_editext"
+                android:layout_marginHorizontal="20dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:textSize="18sp"
+                android:fontFamily="@font/poppins_bold"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+                android:id="@+id/et_email_register"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:inputType="textEmailAddress"
+                android:hint="masukkan email"
+                android:elevation="12dp"
+                android:background="@drawable/rounded_editext"
+                android:layout_marginHorizontal="20dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Password"
+                android:textSize="18sp"
+                android:fontFamily="@font/poppins_bold"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+                android:id="@+id/et_password_register"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:inputType="textVisiblePassword"
+                android:hint="masukkan password"
+                android:elevation="12dp"
+                android:background="@drawable/rounded_editext"
+                android:layout_marginHorizontal="20dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nomor Hp"
+                android:textSize="18sp"
+                android:fontFamily="@font/poppins_bold"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+                android:id="@+id/et_nomor_hp_register"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:inputType="number"
+                android:hint="masukkan nomor hp ex. 082..."
+                android:elevation="12dp"
+                android:background="@drawable/rounded_editext"
+                android:layout_marginHorizontal="20dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Jenis Kelamin"
+                android:textSize="18sp"
+                android:fontFamily="@font/poppins_bold"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"/>
+
+            <RadioGroup
+                android:id="@+id/rg_jenis_kelamin_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp">
+                <RadioButton
+                    android:id="@+id/rb_laki_laki"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="Pria"/>
+                <RadioButton
+                    android:id="@+id/rb_perempuan"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="Perempuan"/>
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Usia"
+                android:textSize="18sp"
+                android:fontFamily="@font/poppins_bold"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+                android:id="@+id/et_usia_register"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:inputType="number"
+                android:hint="masukkan usia anda"
+                android:elevation="12dp"
+                android:background="@drawable/rounded_editext"
+                android:layout_marginHorizontal="20dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tinggi Badan (cm)"
+                android:textSize="18sp"
+                android:fontFamily="@font/poppins_bold"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+                android:id="@+id/et_tinggi_badan_register"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:inputType="number"
+                android:hint="masukkan tinggi badan anda"
+                android:elevation="12dp"
+                android:background="@drawable/rounded_editext"
+                android:layout_marginHorizontal="20dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Berat Badan (kg)"
+                android:textSize="18sp"
+                android:fontFamily="@font/poppins_bold"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+                android:id="@+id/et_berat_badan_register"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:inputType="number"
+                android:hint="masukkan tinggi badan anda dalam Kg"
+                android:elevation="12dp"
+                android:background="@drawable/rounded_editext"
+                android:layout_marginHorizontal="20dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="20dp">
+
+                <Button
+                    android:id="@+id/btn_kembali_ke_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_btn"
+                    android:textColor="@color/white"
+                    android:text="Kembali ke Login"
+                    android:layout_marginHorizontal="5dp"/>
+                <Button
+                    android:id="@+id/btn_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Daftar"
+                    android:textColor="@color/white"
+                    android:background="@drawable/bg_btn"
+                    android:layout_marginHorizontal="5dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

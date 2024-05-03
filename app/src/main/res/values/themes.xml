@@ -1,0 +1,33 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.DiabetsEats" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+        <item name="colorPrimary">@color/ColorOnPrimary</item>
+        <item name="colorPrimaryVariant">@color/md_theme_light_inversePrimary</item>
+    </style>
+
+    <style name="Theme.DiabetsEats" parent="Base.Theme.DiabetsEats" />
+
+    <style name="FontBold">
+        <item name="fontFamily">@font/poppins_bold</item>
+    </style>
+
+    <style name="App.Custom.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/md_theme_dark_secondary</item>
+    </style>
+
+    <style name="Headline" parent="FontBold">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="FontExtraBold">
+        <item name="fontFamily">@font/poppins_extrabold</item>
+    </style>
+
+    <style name="ToolBarFont" parent="FontExtraBold">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+    </style>
+</resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array>
+        <item>@font/poppins_light_italic</item>
+    </array>
+    <array>
+        <item>@font/poppins</item>
+    </array>
+    <array>
+        <item>@font/poppins_italic</item>
+    </array>
+    <array>
+        <item>@font/poppins_bold_italic</item>
+    </array>
+    <array>
+        <item>@font/poppins_extrabold</item>
+    </array>
+    <array>
+        <item>@font/poppins_extrabold_italic</item>
+    </array>
+    <array>
+        <item>@font/poppins_black_italic</item>
+    </array>
+</resources>

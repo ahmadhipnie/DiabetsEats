@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/md_theme_light_onPrimary"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragments.BerandaFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:title="Dashboard"
+            app:titleCentered="true"
+            app:titleTextAppearance="@style/ToolBarFont"
+            app:titleTextColor="?attr/colorOnPrimary" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_kalori_perhari"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:cardCornerRadius="10dp"
+                android:layout_margin="20dp">
+
+                <TextView
+                    android:id="@+id/tv_kalori_perhari"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Kebutuhan Kalori Perhari : "
+                    android:textSize="20sp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:padding="20dp" />
+            </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:id="@+id/tv_grafik_kebutuhan_nutrisi_harian"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Grafik kebutuhan nutrisi harian :"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="20sp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cv_kalori_perhari"/>
+
+        <com.db.williamchart.view.BarChartView
+            android:id="@+id/bar_chart_view"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:chart_labelsSize="20sp"
+            app:chart_spacing="55dp"
+            app:chart_barsColor="@color/ColorOnPrimary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_grafik_kebutuhan_nutrisi_harian"
+            />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_peringkat_makanan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/bar_chart_view"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:cardCornerRadius="10dp"
+                android:layout_margin="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Peringkat Makanan :"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:paddingHorizontal="20dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_peringkat_makanan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="belum memilih makanan"
+                        android:textSize="20sp"
+                        android:padding="20dp"
+                        android:fontFamily="@font/poppins_medium"
+                        />
+                </LinearLayout>
+
+
+
+            </androidx.cardview.widget.CardView>
+
+
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_makanan_beranda"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:listitem="@layout/item_makanan_beranda"
+                tools:itemCount="10"
+                android:layout_marginTop="20dp"
+                android:verticalScrollbarPosition="right"
+                android:screenReaderFocusable="false"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cv_peringkat_makanan"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

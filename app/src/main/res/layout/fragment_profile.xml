@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".ui.fragments.ProfileFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/ColorOnPrimary"
+            app:title="Profile"
+            app:titleCentered="true"
+            app:titleTextAppearance="@style/ToolBarFont"
+            app:titleTextColor="?attr/colorOnPrimary" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="40dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nama lengkap"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/tv_nama_user"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="nama pengguna"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="end"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="40dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nomor Hp"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/tv_nomor_hp_user"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="nomor hp user"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="end"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="40dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Email"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/tv_email_user"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="email user"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="end"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="40dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Jenis Kelamin"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/tv_jenis_kelamin_user"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="jenis kelamin user"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="end"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="40dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Usia"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/tv_usia_user"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="usia user"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="end"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="40dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tinggi Badan"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/tv_tinggi_badan_user"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="tinggi badan user"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="end"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="40dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Berat Badan"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/tv_berat_badan_user"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="berat badan user"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="end"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="40dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Kondisi IMT Anda"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/tv_imt_user"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="kondisi IMT user"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="end"/>
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp">
+
+
+                <Button
+                    android:id="@+id/btn_logout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_btn"
+                    android:textColor="@color/white"
+                    android:text="Logout"
+                    android:layout_marginHorizontal="5dp"/>
+
+            <Button
+                android:id="@+id/btn_edit_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Edit Profile"
+                android:fontFamily="@font/poppins_semibold"
+                android:background="@drawable/bg_btn"
+                android:layout_marginHorizontal="5dp"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+
+
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+</LinearLayout>
