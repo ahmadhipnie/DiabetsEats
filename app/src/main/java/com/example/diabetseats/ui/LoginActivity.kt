@@ -143,9 +143,10 @@ class LoginActivity : AppCompatActivity() {
         editor.putString("password", user.password)
         editor.putString("nomor_hp", user.nomorHp)
         editor.putString("jenis_kelamin", user.jenisKelamin)
-        editor.putInt("usia", user.usia)
+        editor.putString("tanggal_lahir", user.tanggalLahir)
         editor.putInt("berat_badan", user.beratBadan)
         editor.putInt("tinggi_badan", user.tinggiBadan)
+        editor.putString("waktu_makan" , "pagi")
         editor.putBoolean("isLoggedIn", true)
         editor.apply()
 

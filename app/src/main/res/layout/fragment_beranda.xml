@@ -7,11 +7,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragments.BerandaFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -44,14 +43,30 @@
                 app:cardCornerRadius="10dp"
                 android:layout_margin="20dp">
 
-                <TextView
-                    android:id="@+id/tv_kalori_perhari"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Kebutuhan Kalori Perhari : "
-                    android:textSize="20sp"
-                    android:fontFamily="@font/poppins_medium"
-                    android:padding="20dp" />
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_kalori_perhari"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Kebutuhan Kalori Perhari : "
+                        android:textSize="20sp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:padding="20dp" />
+
+                    <TextView
+                        android:id="@+id/tv_sisa_kalori_perhari"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="perhitungan kalori pada makanan"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:paddingHorizontal="20dp"/>
+                </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
 
@@ -68,17 +83,54 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cv_kalori_perhari"/>
 
-        <com.db.williamchart.view.BarChartView
-            android:id="@+id/bar_chart_view"
+        <HorizontalScrollView
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            app:chart_labelsSize="20sp"
-            app:chart_spacing="55dp"
-            app:chart_barsColor="@color/ColorOnPrimary"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_grafik_kebutuhan_nutrisi_harian"
-            />
+            android:layout_height="wrap_content"
+            android:contentDescription="horizontar sv">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    app:cardCornerRadius="10dp">
+                    <com.github.mikephil.charting.charts.PieChart
+                        android:id="@+id/pie_chart_kalori_tersisa"
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="450dp"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="10dp"
+                    android:layout_margin="10dp">
+                        <com.db.williamchart.view.BarChartView
+                            android:id="@+id/bar_chart_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="250dp"
+                            app:chart_labelsSize="15sp"
+                            app:chart_spacing="55dp"
+                            app:chart_barsColor="@color/ColorOnPrimary"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_grafik_kebutuhan_nutrisi_harian"
+                            />
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+
+
+        </HorizontalScrollView>
+
+
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_peringkat_makanan"
@@ -115,25 +167,193 @@
                         />
                 </LinearLayout>
 
-
-
             </androidx.cardview.widget.CardView>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp">
 
+                <TextView
+                    android:id="@+id/tv_makanan_pagi_beranda"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Makan Pagi :"
+                    android:layout_weight="2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cv_peringkat_makanan"/>
+
+                <ImageButton
+                    android:id="@+id/btn_add_makanan_pagi_beranda"
+                    android:contentDescription="tambah makan pagi"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:src="@drawable/baseline_add_24"
+                    android:layout_weight="8"
+                    android:layout_gravity="end"
+                    android:background="@drawable/bg_item_makanan_beranda"/>
+
+            </LinearLayout>
 
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_makanan_beranda"
+                android:id="@+id/rv_makanan_pagi_beranda"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 tools:listitem="@layout/item_makanan_beranda"
-                tools:itemCount="10"
+                tools:itemCount="3"
                 android:layout_marginTop="20dp"
                 android:verticalScrollbarPosition="right"
                 android:screenReaderFocusable="false"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_makanan_pagi_beranda"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/tv_makanan_siang_beranda"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Makan Siang :"
+                android:layout_weight="2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cv_peringkat_makanan"/>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageButton
+                android:id="@+id/btn_add_makanan_siang_beranda"
+                android:contentDescription="tambah makan pagi"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:src="@drawable/baseline_add_24"
+                android:layout_weight="8"
+                android:layout_gravity="end"
+                android:background="@drawable/bg_item_makanan_beranda"/>
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_makanan_siang_beranda"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/item_makanan_beranda"
+            tools:itemCount="3"
+            android:layout_marginTop="20dp"
+            android:verticalScrollbarPosition="right"
+            android:screenReaderFocusable="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_makanan_pagi_beranda"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/tv_makanan_malam_beranda"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Makan Malam :"
+                android:layout_weight="2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cv_peringkat_makanan"/>
+
+            <ImageButton
+                android:id="@+id/btn_add_makanan_malam_beranda"
+                android:contentDescription="tambah makan pagi"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:src="@drawable/baseline_add_24"
+                android:layout_weight="8"
+                android:layout_gravity="end"
+                android:background="@drawable/bg_item_makanan_beranda"/>
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_makanan_malam_beranda"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/item_makanan_beranda"
+            tools:itemCount="3"
+            android:layout_marginTop="20dp"
+            android:verticalScrollbarPosition="right"
+            android:screenReaderFocusable="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_makanan_malam_beranda"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/tv_makanan_cemilan_beranda"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Cemilan :"
+                android:layout_weight="2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cv_peringkat_makanan"/>
+
+            <ImageButton
+                android:id="@+id/btn_add_makanan_cemilan_beranda"
+                android:contentDescription="tambah makan pagi"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:src="@drawable/baseline_add_24"
+                android:layout_weight="8"
+                android:layout_gravity="end"
+                android:background="@drawable/bg_item_makanan_beranda"/>
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_makanan_cemilan_beranda"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/item_makanan_beranda"
+            tools:itemCount="3"
+            android:layout_marginTop="20dp"
+            android:verticalScrollbarPosition="right"
+            android:screenReaderFocusable="false"/>
+
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:outlineAmbientShadowColor="@color/ColorOnPrimary"
+            android:outlineSpotShadowColor="@color/ColorOnPrimary"/>
+
+    </LinearLayout>
 </ScrollView>

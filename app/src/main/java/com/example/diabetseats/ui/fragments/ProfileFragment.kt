@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.diabetseats.R
 import com.example.diabetseats.databinding.FragmentProfileBinding
 import com.example.diabetseats.ui.EditProfileActivity
 import com.example.diabetseats.ui.LoginActivity
@@ -50,7 +49,7 @@ class ProfileFragment : Fragment() {
         val email = sharedPreferences.getString("email", "")
         val nomorHp = sharedPreferences.getString("nomor_hp", "")
         val jenisKelamin = sharedPreferences.getString("jenis_kelamin", "")
-        val usia = sharedPreferences.getInt("usia", 0)
+        val tanggalLahir = sharedPreferences.getString("tanggal_lahir", "")
         val beratBadan = sharedPreferences.getInt("berat_badan", 0)
         val tinggiBadan = sharedPreferences.getInt("tinggi_badan", 0)
 
@@ -58,7 +57,7 @@ class ProfileFragment : Fragment() {
         binding.tvEmailUser.text = email
         binding.tvNomorHpUser.text = nomorHp
         binding.tvJenisKelaminUser.text = jenisKelamin
-        binding.tvUsiaUser.text = "$usia tahun"
+        binding.tvUsiaUser.text = tanggalLahir
         binding.tvBeratBadanUser.text = "$beratBadan kg"
         binding.tvTinggiBadanUser.text = "$tinggiBadan cm"
 
@@ -74,11 +73,22 @@ class ProfileFragment : Fragment() {
         }
 
         binding.btnLogout.setOnClickListener {
-            sharedPreferences.edit().clear().apply()
-            exitApp()
+            logoutUser()
         }
     }
 
+    private fun logoutUser() {
+        // Menghapus nilai Shared Preferences
+        val editor = sharedPreferences.edit()
+        editor.clear()
+        editor.putBoolean("isLoggedIn", false)
+        editor.apply()
+
+        // Navigasi ke halaman login atau halaman awal aplikasi
+        // Gantikan "LoginActivity" dengan nama kelas LoginActivity jika menggunakan aktivitas, atau ganti dengan Fragment lain jika menggunakan Fragment
+        startActivity(Intent(requireActivity(), LoginActivity::class.java))
+        requireActivity().finish()
+    }
     private fun exitApp() {
         requireActivity().finishAffinity() // Keluar dari aplikasi
     }

@@ -1,9 +1,8 @@
 package com.example.diabetseats.ui
-
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.diabetseats.R
 import com.example.diabetseats.databinding.ActivityRegisterBinding
@@ -13,13 +12,15 @@ import com.example.diabetseats.local.room.DiabetsDatabase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.time.LocalDate
+import java.time.Period
+import java.time.format.DateTimeFormatter
+import java.time.format.DateTimeParseException
 
 class RegisterActivity : AppCompatActivity() {
-    private lateinit var binding : ActivityRegisterBinding
-
-    private lateinit var dao : DiabetsDao
+    private lateinit var binding: ActivityRegisterBinding
+    private lateinit var dao: DiabetsDao
     private var jenisKelamin: String = ""
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,58 +39,76 @@ class RegisterActivity : AppCompatActivity() {
         dao = DiabetsDatabase.getDatabase(applicationContext).diabetsDao()
 
         binding.btnRegister.setOnClickListener { registerAdmin() }
+    }
 
+    fun hitungUsia(tanggalLahir: LocalDate): Int {
+        val today = LocalDate.now()
+        val usia = Period.between(tanggalLahir, today).years
+
+        // Jika bulan dan tanggal lahir belum terjadi pada tahun ini, kurangi satu tahun
+        if (tanggalLahir.monthValue > today.monthValue ||
+            (tanggalLahir.monthValue == today.monthValue && tanggalLahir.dayOfMonth > today.dayOfMonth)
+        ) {
+            return usia
+        }
+        return usia
     }
 
     private fun registerAdmin() {
         val namaRegister = binding.etNamaRegister.text.toString().trim()
         val emailRegister = binding.etEmailRegister.text.toString().trim()
         val nomorHpRegister = binding.etNomorHpRegister.text.toString().trim()
-        val usiaRegister = binding.etUsiaRegister.text.toString().trim()
+        val tanggalLahirRegister = binding.etTanggalLahirRegister.text.toString().trim()
         val beratBadanRegister = binding.etBeratBadanRegister.text.toString().trim()
         val tinggiBadanRegister = binding.etTinggiBadanRegister.text.toString().trim()
         val passwordRegister = binding.etPasswordRegister.text.toString().trim()
 
-
-
-        if (emailRegister.isEmpty() || passwordRegister.isEmpty() ||namaRegister.isEmpty() || nomorHpRegister.isEmpty() || usiaRegister.isEmpty() || beratBadanRegister.isEmpty() || tinggiBadanRegister.isEmpty() || jenisKelamin.isEmpty()) {
-            binding.etEmailRegister.error = "Masukkan email"
-            binding.etPasswordRegister.error = "Masukkan password"
-            binding.etNamaRegister.error = "Masukkan nama"
-            binding.etNomorHpRegister.error = "Masukkan nomor hp"
-            binding.etUsiaRegister.error = "Masukkan usia"
-            binding.etBeratBadanRegister.error = "Masukkan berat badan"
-            binding.etTinggiBadanRegister.error = "Masukkan tinggi badan"
-            Toast.makeText(this, "Pilih jenis kelamin", Toast.LENGTH_SHORT).show()
-
+        if (emailRegister.isEmpty() || passwordRegister.isEmpty() || namaRegister.isEmpty() ||
+            nomorHpRegister.isEmpty() || tanggalLahirRegister.isEmpty() || beratBadanRegister.isEmpty() ||
+            tinggiBadanRegister.isEmpty() || jenisKelamin.isEmpty()
+        ) {
+            Toast.makeText(this, "Harap lengkapi semua kolom", Toast.LENGTH_SHORT).show()
             return
         }
 
-        if (usiaRegister.toInt() < 40) {
-            Toast.makeText(this, "hanya bisa untuk usia lebih dari 40 tahun", Toast.LENGTH_SHORT).show()
-            return
-        }
+        try {
+            val parsedDate = LocalDate.parse(tanggalLahirRegister, DateTimeFormatter.ofPattern("dd-MM-yyyy"))
+            val usia = hitungUsia(parsedDate)
 
-        // Cek apakah email sudah terdaftar
-        lifecycleScope.launch {
-            val existingUser = withContext(Dispatchers.IO) {
-                dao.checkRegister(emailRegister)
+            if (usia < 40) {
+                binding.etTanggalLahirRegister.error = "Usia minimal 40 tahun"
+                Toast.makeText(this, "Usia minimal 40 tahun", Toast.LENGTH_SHORT).show()
+                return
             }
-            if (existingUser != null) {
-                // Username sudah terdaftar
-                withContext(Dispatchers.Main) {
-                    binding.etEmailRegister.error = "email sudah terdaftar"
+
+            // Cek apakah email sudah terdaftar
+            lifecycleScope.launch {
+                val existingUser = withContext(Dispatchers.IO) {
+                    dao.checkRegister(emailRegister)
+                }
+                if (existingUser != null) {
+                    // Username sudah terdaftar
+                    binding.etEmailRegister.error = "Email sudah terdaftar"
                     Toast.makeText(this@RegisterActivity, "Email sudah terdaftar", Toast.LENGTH_SHORT).show()
-                }
-            } else {
-                // Username belum terdaftar, tambahkan admin baru ke database
-                val admin = UserEntity(emailRegister, namaRegister, passwordRegister, nomorHpRegister, jenisKelamin, usiaRegister.toInt(), tinggiBadanRegister.toInt(), beratBadanRegister.toInt())
-                insertUser(admin)
-                Intent(this@RegisterActivity, LoginActivity::class.java).also {
-                    startActivity(it)
-                    finish()
+                } else {
+                    // Username belum terdaftar, tambahkan admin baru ke database
+                    val admin = UserEntity(
+                        emailRegister, namaRegister, passwordRegister, nomorHpRegister, jenisKelamin,
+                        tanggalLahirRegister, tinggiBadanRegister.toInt(), beratBadanRegister.toInt()
+                    )
+                    insertUser(admin)
+                    Toast.makeText(this@RegisterActivity, "Registrasi berhasil", Toast.LENGTH_SHORT).show()
+                    Intent(this@RegisterActivity, LoginActivity::class.java).also {
+                        startActivity(it)
+                        finish()
+                    }
                 }
             }
+
+        } catch (e: DateTimeParseException) {
+            // Jika format tanggal lahir tidak sesuai, tampilkan pesan kesalahan
+            binding.etTanggalLahirRegister.error = "Format tanggal lahir salah"
+            Toast.makeText(this, "Format tanggal lahir salah", Toast.LENGTH_SHORT).show()
         }
     }
 

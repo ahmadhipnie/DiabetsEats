@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.diabetseats.local.entity.MakananEntity
 import com.example.diabetseats.local.entity.NutrisiEntity
+import com.example.diabetseats.local.repo.KaloriMakanan
 import com.example.diabetseats.local.repo.NutrientData
 import com.example.diabetseats.local.room.DiabetsDao
 import com.example.diabetseats.local.room.DiabetsDatabase
@@ -15,8 +16,20 @@ class BerandaViewModel(private val context: Context) : ViewModel() {
     private val diabetsDao: DiabetsDao = DiabetsDatabase.getDatabase(context).diabetsDao()
 
 
-    fun getAllFood(): LiveData<List<MakananEntity>> {
-        return diabetsDao.getAllFood()
+    fun getMorningFood(): LiveData<List<MakananEntity>> {
+        return diabetsDao.getMorningFood()
+    }
+
+    fun getAfternoonFood(): LiveData<List<MakananEntity>> {
+        return diabetsDao.getAfternoonFood()
+    }
+
+    fun getEveningFood(): LiveData<List<MakananEntity>> {
+        return diabetsDao.getEveningFood()
+    }
+
+    fun getSnackFood(): LiveData<List<MakananEntity>> {
+        return diabetsDao.getSnackFood()
     }
 
     fun getNutrisiDataByGenderAndAge(jenisKelamin: String, usia: String): LiveData<NutrisiEntity> {
@@ -31,6 +44,10 @@ class BerandaViewModel(private val context: Context) : ViewModel() {
     }
     fun getNutrientData(): LiveData<List<NutrientData>> {
         return diabetsDao.getNutrientData()
+    }
+
+    fun getTotalCalories(): LiveData<Float> {
+        return diabetsDao.getTotalCalories()
     }
 
 

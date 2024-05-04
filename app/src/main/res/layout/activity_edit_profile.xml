@@ -58,18 +58,18 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Usia"
+                android:text="Tanggal Lahir"
                 android:textSize="18sp"
                 android:fontFamily="@font/poppins_bold"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="20dp"/>
 
             <EditText
-                android:id="@+id/et_usia_edit_profile"
+                android:id="@+id/et_tanggal_lahir_edit_profile"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:inputType="text"
-                android:hint="masukkan usia"
+                android:hint="masukkan tanggal lahir"
                 android:elevation="12dp"
                 android:background="@drawable/rounded_editext"
                 android:layout_marginHorizontal="20dp" />

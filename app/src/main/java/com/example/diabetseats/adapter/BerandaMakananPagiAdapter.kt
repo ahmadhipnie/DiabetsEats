@@ -6,14 +6,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.diabetseats.data.response.HintsItem
 import com.example.diabetseats.databinding.ItemMakananBerandaBinding
-import com.example.diabetseats.databinding.ItemMakananBinding
 import com.example.diabetseats.local.entity.MakananEntity
 import com.example.diabetseats.viewmodel.BerandaViewModel
-import com.example.diabetseats.viewmodel.MakananViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
-class BerandaAdapter(dataList: List<HintsItem>, private val berandaViewModel: BerandaViewModel, private val coroutineScope: CoroutineScope) : RecyclerView.Adapter<BerandaAdapter.BerandaViewHolder>() {
+class BerandaMakananPagiAdapter(dataList: List<HintsItem>,
+                                private val berandaViewModel: BerandaViewModel, private val coroutineScope: CoroutineScope)
+    : RecyclerView.Adapter<BerandaMakananPagiAdapter.BerandaMakananPagiViewHolder>() {
     private val dataList = ArrayList<MakananEntity>()
 
 
@@ -24,7 +24,7 @@ class BerandaAdapter(dataList: List<HintsItem>, private val berandaViewModel: Be
     }
 
 
-    inner class BerandaViewHolder(val binding: ItemMakananBerandaBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class BerandaMakananPagiViewHolder(val binding: ItemMakananBerandaBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(makananItem: MakananEntity) {
             binding.apply {
                 tvItemLabelMakananBeranda.text = makananItem.namaMakanan
@@ -50,11 +50,11 @@ class BerandaAdapter(dataList: List<HintsItem>, private val berandaViewModel: Be
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): BerandaAdapter.BerandaViewHolder {
+    ): BerandaMakananPagiAdapter.BerandaMakananPagiViewHolder {
         val binding = ItemMakananBerandaBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return BerandaViewHolder(binding)    }
+        return BerandaMakananPagiViewHolder(binding)    }
 
-    override fun onBindViewHolder(holder: BerandaAdapter.BerandaViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: BerandaMakananPagiAdapter.BerandaMakananPagiViewHolder, position: Int) {
         holder.bind(dataList[position])
     }
 

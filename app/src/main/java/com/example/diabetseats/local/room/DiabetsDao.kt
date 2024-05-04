@@ -12,6 +12,7 @@ import com.example.diabetseats.local.entity.NutrisiEntity
 import com.example.diabetseats.local.entity.PerbandinganKriteriaEntity
 import com.example.diabetseats.local.entity.PvKriteriaEntity
 import com.example.diabetseats.local.entity.UserEntity
+import com.example.diabetseats.local.repo.KaloriMakanan
 import com.example.diabetseats.local.repo.NutrientData
 
 
@@ -50,8 +51,21 @@ interface DiabetsDao {
     @Query("SELECT * FROM makanan_table LIMIT :limit")
     fun getDataWithLimit(limit: Int): List<MakananEntity>
 
-    @Query("SELECT * FROM makanan_table")
-    fun getAllFood(): LiveData<List<MakananEntity>>
+
+
+    @Query("SELECT * FROM makanan_table WHERE waktu_makan = 'pagi'")
+    fun getMorningFood(): LiveData<List<MakananEntity>>
+
+    @Query("SELECT * FROM makanan_table WHERE waktu_makan = 'siang'")
+    fun getAfternoonFood(): LiveData<List<MakananEntity>>
+
+    @Query("SELECT * FROM makanan_table WHERE waktu_makan = 'malam'")
+    fun getEveningFood(): LiveData<List<MakananEntity>>
+
+    @Query("SELECT * FROM makanan_table WHERE waktu_makan = 'snack'")
+    fun getSnackFood(): LiveData<List<MakananEntity>>
+
+
 
     @Delete
     fun delete(makananEntity: MakananEntity)
@@ -67,11 +81,17 @@ interface DiabetsDao {
     @Query("SELECT * FROM nutrisi_table where jenis_kelamin = :jenisKelamin and usia = :usia")
     fun getNutrisiByGenderAndAge(jenisKelamin: String, usia: String): LiveData<NutrisiEntity>
 
-    @Query("UPDATE user_table SET nomor_hp = :newNomorHp, usia = :newUsia, tinggi_badan = :newTinggiBadan, berat_badan = :newBeratBadan WHERE email = :email")
-    fun updateUserDetails(email: String, newNomorHp: String, newUsia: Int, newTinggiBadan: Int, newBeratBadan: Int)
+    @Query("UPDATE user_table SET nomor_hp = :newNomorHp, tanggal_lahir = :newTanggalLahir, tinggi_badan = :newTinggiBadan, berat_badan = :newBeratBadan WHERE email = :email")
+    fun updateUserDetails(email: String, newNomorHp: String, newTanggalLahir: String, newTinggiBadan: Int, newBeratBadan: Int)
 
     @Query("SELECT * FROM user_table WHERE email = :email")
     suspend fun getUserByEmail(email: String): UserEntity?
+
+    @Query("SELECT SUM(kalori_makanan) AS totalKalori FROM makanan_table")
+    fun getTotalCalories(): LiveData<Float>
+
+
+
 
 
 

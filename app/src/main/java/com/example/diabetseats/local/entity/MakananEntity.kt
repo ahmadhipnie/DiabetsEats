@@ -26,6 +26,9 @@ data class MakananEntity (
     var karbohidratMakanan: Float,
 
     @ColumnInfo(name = "image")
-    var image: String
+    var image: String,
+
+    @ColumnInfo(name = "waktu_makan")
+    var waktuMakan: String
 
 )

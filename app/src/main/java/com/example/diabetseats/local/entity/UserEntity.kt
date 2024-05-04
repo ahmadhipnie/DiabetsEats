@@ -22,8 +22,8 @@ data class UserEntity (
     @ColumnInfo(name = "jenis_kelamin")
     var jenisKelamin: String,
 
-    @ColumnInfo(name = "usia")
-    var usia: Int,
+    @ColumnInfo(name = "tanggal_lahir")
+    var tanggalLahir: String,
 
     @ColumnInfo(name = "tinggi_badan")
     var tinggiBadan: Int,
