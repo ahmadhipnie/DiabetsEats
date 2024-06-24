@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/md_theme_light_onPrimary"
+    android:background="@color/white"
     tools:context=".ui.fragments.MakananFragment">
 
     <com.google.android.material.search.SearchBar
         android:id="@+id/searchBar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="16dp"
-        android:hint="masukkan nama"
-        android:backgroundTint="@color/md_theme_dark_onPrimaryContainer"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        android:hint="Cari Makanan"
+        android:backgroundTint="@color/orangee"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,12 +23,14 @@
         android:id="@+id/searchView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:hint="masukkan nama"
+        android:hint="Cari Makanan"
         app:layout_anchor="@id/searchBar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -37,16 +39,17 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_makanan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginHorizontal="10dp"
                 tools:listitem="@layout/item_makanan"
                 tools:itemCount="10"
-
-                app:layout_constraintTop_toBottomOf="@+id/searchBar"
-                />
+                app:layout_constraintTop_toBottomOf="@+id/searchBar"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

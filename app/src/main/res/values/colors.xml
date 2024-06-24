@@ -3,9 +3,18 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="teal_700">#FF018786</color>
-    <color name="light_gray">#DADADA</color>
-    <color name="light_blue">#7C89FF</color>
-    <color name="seed">#bb8400</color>
+    <color name="soft_gray">#1DA6A6A6</color>
+    <color name="light_gray">#20A6A6A6</color>
+    <color name="gray">#818080</color>
+    <color name="light_blue">#2767C6E3</color>
+    <color name="orangee">#CBFF9800</color>
+    <color name="merahh">#E54115</color>
+    <color name="hijau">#78BC43</color>
+    <color name="green_dark">#669801</color>
+    <color name="orange_dark">#FF8800</color>
+    <color name="merah_pudar">#DB8A74</color>
+    <color name="soft_orangee">#2CFF813A</color>
+    <color name="seed">#03A9F4</color>
     <color name="ColorOnPrimary">#bb8400</color>
     <color name="md_theme_light_primary">#5571FF</color>
     <color name="md_theme_light_onPrimary">#FFFFFF</color>
@@ -39,6 +48,7 @@
     <color name="md_theme_light_scrim">#000000</color>
     <color name="md_theme_dark_primary">#89b4fa</color>
     <color name="md_theme_dark_onPrimary">#422C00</color>
+
     <color name="md_theme_dark_primaryContainer">#5F4100</color>
     <color name="md_theme_dark_onPrimaryContainer">#FFDEAA</color>
     <color name="md_theme_dark_secondary">#DBC3A1</color>
@@ -67,7 +77,6 @@
     <color name="md_theme_dark_surfaceTint">#FBBC44</color>
     <color name="md_theme_dark_outlineVariant">#4E4539</color>
     <color name="md_theme_dark_scrim">#000000</color>
-
     <color name="button">#378CE7</color>
     <color name="tema">#5356FF</color>
     <color name="container">#67C6E3</color>

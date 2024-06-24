@@ -3,4 +3,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="label_makanan">label makanan</string>
+    <string name="paragraf1">Karbohidrat merupakan nutrisi yang paling berpengaruh dalam mengatur kadar gula darah karena secara langsung dapat mempengaruhi konsentrasi glukosa dalam darah. Penderita diabetes memang perlu memperhatikan asupan karbohidrat untuk lebih mengontrol kadar gula darahnya, karena karbohidrat yang dikonsumsi dapat mempengaruhi kualitas hidup dan kesehatannya secara keseluruhan.\nKarbohidrat 45% – 65 % Dari Total Asupan Energi.</string>
+    <string name="paragraf2">Meskipun protein berperan penting dalam kesehatan secara umum, asupan protein biasanya tidak berpengaruh langsung terhadap kadar gula darah seperti karbohidrat dan lemak. Meski demikian, pasien diabetes harus tetap memperhatikan jumlah protein yang dikonsumsinya untuk menjamin keseimbangan nutrisi dan menunjang fungsi tubuh secara keseluruhan.\nProtein 10% - 20% Dari Total Asupan Energi.</string>
+    <string name="paragraf3"><![CDATA[Lemak juga penting untuk dipertimbangkan karena lemak dapat mempengaruhi resistensi insulin, yang merupakan masalah umum pada pasien diabetes. Memilih jenis lemak sehat seperti lemak tak jenuh tunggal dan lemak tak jenuh ganda dapat membantu dalam manajemen kondisi diabetes.\nLemak 20% - 25% Dari Total Asupan Energi.]]></string>
 </resources>

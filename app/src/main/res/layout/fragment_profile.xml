@@ -15,268 +15,249 @@
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/topAppBar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/ColorOnPrimary"
-            app:title="Profile"
-            app:titleCentered="true"
-            app:titleTextAppearance="@style/ToolBarFont"
-            app:titleTextColor="?attr/colorOnPrimary" />
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/tv_keluar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Keluar"
+                android:textColor="@color/merahh"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="14sp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_gravity="start"/>
+
+            <TextView
+                android:id="@+id/tv_profil_saya"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profil"
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="18sp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/tv_edit_profil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit"
+                android:textColor="@color/hijau"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="14sp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_gravity="end"/>
+
+
+        </com.google.android.material.appbar.MaterialToolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
 
-
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginHorizontal="20dp">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/healthy_food"
+            android:layout_marginHorizontal="40dp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_nama_pengguna"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="nama pengguna"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginTop="5dp"
+        android:layout_marginHorizontal="40dp"
+        android:gravity="center"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="40dp">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Nama lengkap"
-                    android:textSize="15sp"
-                    android:fontFamily="@font/poppins_bold"
-                    android:layout_weight="1"/>
-
-                <TextView
-                    android:id="@+id/tv_nama_user"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="nama pengguna"
-                    android:textSize="15sp"
-                    android:fontFamily="@font/poppins_medium"
-                    android:gravity="end"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="40dp">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Nomor Hp"
-                    android:textSize="15sp"
-                    android:fontFamily="@font/poppins_bold"
-                    android:layout_weight="1"/>
-
-                <TextView
-                    android:id="@+id/tv_nomor_hp_user"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="nomor hp user"
-                    android:textSize="15sp"
-                    android:fontFamily="@font/poppins_medium"
-                    android:gravity="end"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="40dp">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Email"
-                    android:textSize="15sp"
-                    android:fontFamily="@font/poppins_bold"
-                    android:layout_weight="1"/>
-
-                <TextView
-                    android:id="@+id/tv_email_user"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="email user"
-                    android:textSize="15sp"
-                    android:fontFamily="@font/poppins_medium"
-                    android:gravity="end"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="40dp">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Jenis Kelamin"
-                    android:textSize="15sp"
-                    android:fontFamily="@font/poppins_bold"
-                    android:layout_weight="1"/>
-
-                <TextView
-                    android:id="@+id/tv_jenis_kelamin_user"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="jenis kelamin user"
-                    android:textSize="15sp"
-                    android:fontFamily="@font/poppins_medium"
-                    android:gravity="end"/>
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="40dp">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Tanggal Lahir"
-                    android:textSize="15sp"
-                    android:fontFamily="@font/poppins_bold"
-                    android:layout_weight="1"/>
-
-                <TextView
-                    android:id="@+id/tv_usia_user"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="tanggal lahir user"
-                    android:textSize="15sp"
-                    android:fontFamily="@font/poppins_medium"
-                    android:gravity="end"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="40dp">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Tinggi Badan"
-                    android:textSize="15sp"
-                    android:fontFamily="@font/poppins_bold"
-                    android:layout_weight="1"/>
-
-                <TextView
-                    android:id="@+id/tv_tinggi_badan_user"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="tinggi badan user"
-                    android:textSize="15sp"
-                    android:fontFamily="@font/poppins_medium"
-                    android:gravity="end"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="40dp">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Berat Badan"
-                    android:textSize="15sp"
-                    android:fontFamily="@font/poppins_bold"
-                    android:layout_weight="1"/>
-
-                <TextView
-                    android:id="@+id/tv_berat_badan_user"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="berat badan user"
-                    android:textSize="15sp"
-                    android:fontFamily="@font/poppins_medium"
-                    android:gravity="end"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="40dp">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Kondisi IMT Anda"
-                    android:textSize="15sp"
-                    android:fontFamily="@font/poppins_bold"
-                    android:layout_weight="1"/>
-
-                <TextView
-                    android:id="@+id/tv_imt_user"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="kondisi IMT user"
-                    android:textSize="15sp"
-                    android:fontFamily="@font/poppins_medium"
-                    android:gravity="end"/>
-            </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="20dp">
-
-
-                <Button
-                    android:id="@+id/btn_logout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/bg_btn"
-                    android:textColor="@color/white"
-                    android:text="Logout"
-                    android:layout_marginHorizontal="5dp"/>
-
-            <Button
-                android:id="@+id/btn_edit_profile"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Edit Profile"
                 android:fontFamily="@font/poppins_semibold"
-                android:background="@drawable/bg_btn"
-                android:layout_marginHorizontal="5dp"
-                android:textColor="@color/white"/>
+                android:text="Email"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_gravity="start"/>
+
+            <TextView
+                android:id="@+id/tv_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:hint="contoh@gmail.com"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:background="@drawable/bg_tv"
+                android:layout_marginTop="1dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_gravity="start"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Nomor Telepon"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_gravity="start"/>
+
+            <TextView
+                android:id="@+id/tv_nomor_telepon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="08XXXXXXXXXX"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:background="@drawable/bg_tv"
+                android:layout_marginTop="1dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_gravity="start"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Jenis Kelamin"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_gravity="start"/>
+
+            <TextView
+                android:id="@+id/tv_jenis_kelamin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="jenis kelamin"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:background="@drawable/bg_tv"
+                android:layout_marginTop="1dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_gravity="start"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Tanggal Lahir"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_gravity="start"/>
+
+            <TextView
+                android:id="@+id/tv_tanggal_lahir"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="dd-mm-yyyy"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:background="@drawable/bg_tv"
+                android:layout_marginTop="1dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_gravity="start"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Tinggi Badan"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_gravity="start"/>
+
+            <TextView
+                android:id="@+id/tv_tinggi_badan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="0 Kg"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:background="@drawable/bg_tv"
+                android:layout_marginTop="1dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_gravity="start"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Berat Badan"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_gravity="start"/>
+
+            <TextView
+                android:id="@+id/tv_berat_badan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="0 Kg"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:background="@drawable/bg_tv"
+                android:layout_marginTop="1dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_gravity="start"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Indeks Massa Tubuh"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_gravity="start"/>
+
+            <TextView
+                android:id="@+id/tv_imt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="hasil imt"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:background="@drawable/bg_tv"
+                android:layout_marginTop="1dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_gravity="start"/>
+
         </LinearLayout>
-
-
-
-
-
-
-
-        </LinearLayout>
-    </ScrollView>
-
-
-
 
 </LinearLayout>

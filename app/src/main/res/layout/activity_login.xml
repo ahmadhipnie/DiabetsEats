@@ -11,122 +11,113 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:gravity="center"
-        android:layout_marginTop="30dp">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_bold"
-        android:gravity="center"
-        android:text="hallo,"
-        android:textAlignment="center"
-        android:textAllCaps="true"
-        android:layout_gravity="bottom"
-        android:textSize="18sp"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Selamat Datang!"
-        android:textSize="28sp"
-        android:fontFamily="@font/poppins_bold"/>
+        android:layout_marginTop="50dp"
+        android:layout_marginHorizontal="20dp">
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:src="@drawable/welcome"
+            android:layout_marginHorizontal="40dp"/>
     </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Email"
-        android:textSize="18sp"
-        android:fontFamily="@font/poppins_bold"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="20dp"/>
+        android:textSize="14sp"
+        android:fontFamily="@font/poppins_semibold"
+        android:textColor="@color/black"
+        android:layout_gravity="start"
+        android:layout_marginHorizontal="20dp"/>
 
     <EditText
         android:id="@+id/et_emailSignIn"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:inputType="text"
-        android:hint="masukkan email"
-        android:elevation="12dp"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:hint="contoh@gmail.com"
+        android:textSize="14sp"
         android:background="@drawable/rounded_editext"
+        android:fontFamily="@font/poppins"
+        android:textColor="@color/black"
+        android:layout_marginTop="1dp"
         android:layout_marginHorizontal="20dp"
-        />
+        android:layout_gravity="start"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Password"
-        android:textSize="18sp"
-        android:fontFamily="@font/poppins_bold"
+        android:textSize="14sp"
+        android:fontFamily="@font/poppins_semibold"
+        android:textColor="@color/black"
+        android:layout_gravity="start"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="20dp"/>
+
     <EditText
         android:id="@+id/et_passwordSignIn"
         android:inputType="textPassword"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:elevation="12dp"
-        android:hint="masukkan Password"
-        android:maxLines="1"
-        android:longClickable="false"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:hint="masukkan password"
         android:background="@drawable/rounded_editext"
+        android:fontFamily="@font/poppins"
+        android:textColor="@color/black"
+        android:layout_marginTop="1dp"
         android:layout_marginHorizontal="20dp"
-        />
+        android:layout_gravity="start"/>
 
     <TextView
         android:id="@+id/tv_lupa_sandi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="end"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="1dp"
         android:layout_marginHorizontal="20dp"
-        android:text="Lupa sandi"
-        android:textColor="@color/ColorOnPrimary"
-        android:textSize="20sp"
+        android:text="Lupa Password?"
+        android:textSize="13sp"
         android:fontFamily="@font/poppins_bold"/>
 
     <Button
         android:id="@+id/btn_login_user"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login"
-        android:fontFamily="@font/poppins_semibold"
+        android:text="Masuk"
+        android:textSize="15sp"
+        android:fontFamily="@font/poppins_bold"
         android:background="@drawable/bg_btn"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:textColor="@color/white"
-        android:layout_marginBottom="20dp"
         android:layout_marginHorizontal="20dp"
-        android:onClick="Login"/>
+        android:onClick="Masuk"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="5dp"
+        android:layout_marginHorizontal="20dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_bold"
+            android:fontFamily="@font/poppins"
             android:gravity="center"
-            android:text="belum punya akun?"
-            android:textSize="20sp"
-            />
+            android:text="Belum punya akun? "
+            android:textSize="13sp"
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/tv_daftar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Daftar"
-            android:textColor="@color/ColorOnPrimary"
-            android:textSize="20sp"
+            android:textColor="@color/hijau"
+            android:textSize="13sp"
             android:fontFamily="@font/poppins_bold"/>
     </LinearLayout>
-
-
-
-
 
 </LinearLayout>

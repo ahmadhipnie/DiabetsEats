@@ -5,124 +5,162 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/white"
     tools:context=".ui.LupaSandiActivity">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/topAppBar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white">
+
+                <TextView
+                    android:id="@+id/tv_kembali_lupa_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kembali"
+                    android:textColor="@color/merahh"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textSize="14sp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_gravity="start"/>
+
+                <TextView
+                    android:id="@+id/tv_lupa_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lupa Password"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textSize="18sp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:id="@+id/tv_simpan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Simpan"
+                    android:textColor="@color/hijau"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textSize="14sp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_gravity="end"/>
+
+            </com.google.android.material.appbar.MaterialToolbar>
+
+
+        </com.google.android.material.appbar.AppBarLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <com.google.android.material.appbar.AppBarLayout
-                android:id="@+id/appBarLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
-
-                <com.google.android.material.appbar.MaterialToolbar
-                    android:id="@+id/topAppBar"
-                    android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
-                    android:background="?attr/colorPrimary"
-                    app:title="Lupa Sandi"
-                    app:titleCentered="true"
-                    app:titleTextAppearance="@style/ToolBarFont"
-                    app:titleTextColor="?attr/colorOnPrimary" />
-
-            </com.google.android.material.appbar.AppBarLayout>
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Email"
-                android:textSize="18sp"
-                android:fontFamily="@font/poppins_bold"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="20dp"/>
-
-            <EditText
-                android:id="@+id/et_email_lupa_sandi"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:inputType="text"
-                android:hint="masukkan email anda"
-                android:elevation="12dp"
-                android:background="@drawable/rounded_editext"
-                android:layout_marginHorizontal="20dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="password"
-                android:textSize="18sp"
-                android:fontFamily="@font/poppins_bold"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="20dp"/>
-
-            <EditText
-                android:id="@+id/et_password_lupa_sandi"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:inputType="text"
-                android:hint="masukkan password baru"
-                android:elevation="12dp"
-                android:background="@drawable/rounded_editext"
-                android:layout_marginHorizontal="20dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="password"
-                android:textSize="18sp"
-                android:fontFamily="@font/poppins_bold"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="20dp"/>
-
-            <EditText
-                android:id="@+id/et_konfirmasi_password_lupa_sandi"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:inputType="text"
-                android:hint="masukkan konfirmasi password"
-                android:elevation="12dp"
-                android:background="@drawable/rounded_editext"
-                android:layout_marginHorizontal="20dp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginVertical="20dp">
-
-                <Button
-                    android:id="@+id/btn_kembali_ke_login"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/bg_btn"
-                    android:textColor="@color/white"
-                    android:text="Kembali ke Login"
-                    android:layout_marginHorizontal="5dp"/>
-                <Button
-                    android:id="@+id/btn_ubah_password"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Ubah Password"
-                    android:textColor="@color/white"
-                    android:background="@drawable/bg_btn"
-                    android:layout_marginHorizontal="5dp"/>
-
-            </LinearLayout>
-
+            android:gravity="center"
+            android:layout_marginHorizontal="20dp">
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="80dp"
+                android:src="@drawable/bintang"/>
         </LinearLayout>
-    </ScrollView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            android:gravity="center"
+            android:fontFamily="@font/poppins"
+            android:text="Pastikan alamat email yang anda masukkan ini telah terdaftar di DiabetsEats."
+            android:layout_marginHorizontal="20dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:textSize="14sp"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/black"
+            android:layout_gravity="start"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"/>
+
+        <EditText
+            android:id="@+id/et_email_lupa_sandi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:hint="contoh@gmail.com"
+            android:textSize="14sp"
+            android:background="@drawable/rounded_editext"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/black"
+            android:layout_marginTop="1dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_gravity="start"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Password Baru"
+            android:textSize="14sp"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/black"
+            android:layout_gravity="start"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"/>
+
+        <EditText
+            android:id="@+id/et_password_lupa_sandi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:hint="masukkan password baru"
+            android:textSize="14sp"
+            android:background="@drawable/rounded_editext"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/black"
+            android:layout_marginTop="1dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_gravity="start"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Konfirmasi Password Baru"
+            android:textSize="14sp"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/black"
+            android:layout_gravity="start"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"/>
+
+        <EditText
+            android:id="@+id/et_konfirmasi_password_lupa_sandi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:hint="ulangi password baru"
+            android:textSize="14sp"
+            android:background="@drawable/rounded_editext"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/black"
+            android:layout_marginTop="1dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_gravity="start"/>
+
+    </LinearLayout>
 
 </LinearLayout>
